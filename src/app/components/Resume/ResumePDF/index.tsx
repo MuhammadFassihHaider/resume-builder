@@ -68,11 +68,12 @@ export const ResumePDF = ({
       />
     ),
     projects: () => (
-      <ResumePDFProject
-        heading={formToHeading["projects"]}
-        projects={projects}
-        themeColor={themeColor}
-      />
+     <></>
+      // <ResumePDFProject
+      //   heading={formToHeading["projects"]}
+      //   projects={projects}
+      //   themeColor={themeColor}
+      // />
     ),
     skills: () => (
       <ResumePDFSkills
@@ -96,7 +97,8 @@ export const ResumePDF = ({
     <>
       <Document title={`${name} Resume`} author={name} producer={"OpenResume"}>
         <Page
-          size={documentSize === "A4" ? "A4" : "LETTER"}
+          // size={documentSize === "A4" ? "A4" : "LETTER"}
+          size={"A4"}
           style={{
             ...styles.flexCol,
             color: DEFAULT_FONT_COLOR,
@@ -116,7 +118,7 @@ export const ResumePDF = ({
           <View
             style={{
               ...styles.flexCol,
-              padding: `${spacing[0]} ${spacing[20]}`,
+              padding: `${spacing[0]} ${spacing[8]}`,
             }}
           >
             <ResumePDFProfile

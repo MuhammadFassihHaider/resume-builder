@@ -11,6 +11,19 @@ import {
 } from "components/Resume/ResumePDF/common";
 import type { ResumeProfile } from "lib/redux/types";
 
+const parseLinkValues = (url: string) => {
+  if (url.includes("github") || url.includes("linkedin")) {
+    if (url.includes("github"))
+      return url.split(".com/")[1]
+    else 
+      return url.split(".com/in/")[1]?.replaceAll("/", "")
+
+  }
+  return url
+}
+
+type TIcons = Omit<ResumeProfile, "name" | "summary">
+
 export const ResumePDFProfile = ({
   profile,
   themeColor,
@@ -20,8 +33,8 @@ export const ResumePDFProfile = ({
   themeColor: string;
   isPDF: boolean;
 }) => {
-  const { name, email, phone, url, summary, location } = profile;
-  const iconProps = { email, phone, location, url };
+  const { name, email, phone, github, summary, location, linkedin, projects } = profile;
+  const iconProps: TIcons = { email, phone, location, linkedin, github, projects };
 
   return (
     <ResumePDFSection style={{ marginTop: spacing["4"] }}>
@@ -42,17 +55,20 @@ export const ResumePDFProfile = ({
       >
         {Object.entries(iconProps).map(([key, value]) => {
           if (!value) return null;
-
           let iconType = key as IconType;
-          if (key === "url") {
+          if (key === "linkedin" || key === "github" || key === "projects") {
+            console.log("CAME HERE ONCE", value);
+
             if (value.includes("github")) {
               iconType = "url_github";
             } else if (value.includes("linkedin")) {
               iconType = "url_linkedin";
+            } else if (value.includes("notion")) {
+              iconType = "url_projects";
             }
           }
 
-          const shouldUseLinkWrapper = ["email", "url", "phone"].includes(key);
+          const shouldUseLinkWrapper = ["email", "linkedin", "github", "phone"].includes(key);
           const Wrapper = ({ children }: { children: React.ReactNode }) => {
             if (!shouldUseLinkWrapper) return <>{children}</>;
 
@@ -85,11 +101,13 @@ export const ResumePDFProfile = ({
                 ...styles.flexRow,
                 alignItems: "center",
                 gap: spacing["1"],
+                minWidth: "50%",
+                marginBottom: "3pt"
               }}
             >
               <ResumePDFIcon type={iconType} isPDF={isPDF} />
               <Wrapper>
-                <ResumePDFText>{value}</ResumePDFText>
+                <ResumePDFText>{parseLinkValues(value)}</ResumePDFText>
               </Wrapper>
             </View>
           );

@@ -10,14 +10,17 @@ import type {
   ResumeWorkExperience,
 } from "lib/redux/types";
 import type { ShowForm } from "lib/redux/settingsSlice";
+import { MyResume } from "resume-builder/constants";
 
 export const initialProfile: ResumeProfile = {
-  name: "",
+  name: "Muhammad Fassih Haider",
   summary: "",
-  email: "",
-  phone: "",
-  location: "",
-  url: "",
+  email: "fassih.haider786@gmail.com",
+  phone: "+92-336-888-8395",
+  location: "Islamabad, Pakistan",
+  github: "https://github.com/MuhammadFassihHaider",
+  linkedin: "https://www.linkedin.com/in/muhammad-fassih-haider/",
+  projects: ""
 };
 
 export const initialWorkExperience: ResumeWorkExperience = {
@@ -46,8 +49,8 @@ export const initialFeaturedSkills: FeaturedSkill[] = Array(6).fill({
   ...initialFeaturedSkill,
 });
 export const initialSkills: ResumeSkills = {
-  featuredSkills: initialFeaturedSkills,
-  descriptions: [],
+  technical: [],
+  soft: []
 };
 
 export const initialCustom = {
@@ -76,7 +79,7 @@ export type CreateChangeActionWithDescriptions<T> = {
 
 export const resumeSlice = createSlice({
   name: "resume",
-  initialState: initialResumeState,
+  initialState: MyResume,
   reducers: {
     changeProfile: (
       draft,
@@ -126,12 +129,7 @@ export const resumeSlice = createSlice({
       const { field } = action.payload;
       if (field === "descriptions") {
         const { value } = action.payload;
-        draft.skills.descriptions = value;
-      } else {
-        const { idx, skill, rating } = action.payload;
-        const featuredSkill = draft.skills.featuredSkills[idx];
-        featuredSkill.skill = skill;
-        featuredSkill.rating = rating;
+        draft.skills.technical = value;
       }
     },
     changeCustom: (

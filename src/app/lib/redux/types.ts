@@ -2,9 +2,11 @@ export interface ResumeProfile {
   name: string;
   email: string;
   phone: string;
-  url: string;
+  github: string;
+  linkedin: string;
   summary: string;
   location: string;
+  projects: string;
 }
 
 export interface ResumeWorkExperience {
@@ -34,8 +36,8 @@ export interface FeaturedSkill {
 }
 
 export interface ResumeSkills {
-  featuredSkills: FeaturedSkill[];
-  descriptions: string[];
+  technical: string[];
+  soft: string[]
 }
 
 export interface ResumeCustom {

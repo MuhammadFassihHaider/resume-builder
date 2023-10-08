@@ -16,21 +16,14 @@ import {
 export const SkillsForm = () => {
   const skills = useAppSelector(selectSkills);
   const dispatch = useAppDispatch();
-  const { featuredSkills, descriptions } = skills;
+  const { technical } = skills;
   const form = "skills";
   const showBulletPoints = useAppSelector(selectShowBulletPoints(form));
-  const themeColor = useAppSelector(selectThemeColor) || "#38bdf8";
 
   const handleSkillsChange = (field: "descriptions", value: string[]) => {
     dispatch(changeSkills({ field, value }));
   };
-  const handleFeaturedSkillsChange = (
-    idx: number,
-    skill: string,
-    rating: number
-  ) => {
-    dispatch(changeSkills({ field: "featuredSkills", idx, skill, rating }));
-  };
+
   const handleShowBulletPoints = (value: boolean) => {
     dispatch(changeShowBulletPoints({ field: form, value }));
   };
@@ -44,7 +37,7 @@ export const SkillsForm = () => {
             labelClassName="col-span-full"
             name="descriptions"
             placeholder="Bullet points"
-            value={descriptions}
+            value={technical}
             onChange={handleSkillsChange}
             showBulletPoints={showBulletPoints}
           />
@@ -65,20 +58,6 @@ export const SkillsForm = () => {
             circles mean higher proficiency.
           </p>
         </InputGroupWrapper>
-
-        {featuredSkills.map(({ skill, rating }, idx) => (
-          <FeaturedSkillInput
-            key={idx}
-            className="col-span-3"
-            skill={skill}
-            rating={rating}
-            setSkillRating={(newSkill, newRating) => {
-              handleFeaturedSkillsChange(idx, newSkill, newRating);
-            }}
-            placeholder={`Featured Skill ${idx + 1}`}
-            circleColor={themeColor}
-          />
-        ))}
       </div>
     </Form>
   );

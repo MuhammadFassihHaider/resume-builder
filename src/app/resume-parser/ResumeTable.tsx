@@ -47,7 +47,7 @@ export const ResumeTable = ({ resume }: { resume: Resume }) => {
     resume.workExperiences.length === 0
       ? [deepClone(initialWorkExperience)]
       : resume.workExperiences;
-  const skills = [...resume.skills.descriptions];
+  const skills = [...resume.skills.technical];
   const featuredSkills = resume.skills.featuredSkills
     .filter((item) => item.skill.trim())
     .map((item) => item.skill)
@@ -64,7 +64,7 @@ export const ResumeTable = ({ resume }: { resume: Resume }) => {
         <TableRow label="Email" value={resume.profile.email} />
         <TableRow label="Phone" value={resume.profile.phone} />
         <TableRow label="Location" value={resume.profile.location} />
-        <TableRow label="Link" value={resume.profile.url} />
+        <TableRow label="Link" value={resume.profile.github} />
         <TableRow label="Summary" value={resume.profile.summary} />
         <TableRowHeader>Education</TableRowHeader>
         {educations.map((education, idx) => (

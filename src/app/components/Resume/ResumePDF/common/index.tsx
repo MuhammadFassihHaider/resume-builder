@@ -3,6 +3,7 @@ import type { Style } from "@react-pdf/types";
 import { styles, spacing } from "components/Resume/ResumePDF/styles";
 import { DEBUG_RESUME_PDF_FLAG } from "lib/constants";
 import { DEFAULT_FONT_COLOR } from "lib/redux/settingsSlice";
+import { useMemo } from "react";
 
 export const ResumePDFSection = ({
   themeColor,
@@ -79,14 +80,22 @@ export const ResumePDFText = ({
 export const ResumePDFBulletList = ({
   items,
   showBulletPoints = true,
+  two_columns = false,
 }: {
   items: string[];
   showBulletPoints?: boolean;
+  two_columns?: boolean;
 }) => {
-  return (
-    <>
-      {items.map((item, idx) => (
-        <View style={{ ...styles.flexRow }} key={idx}>
+  const content = useMemo(
+    () =>
+      items.map((item, idx) => (
+        <View
+          style={{
+            ...styles.flexRow,
+            minWidth: two_columns ? "45%" : "100%",
+          }}
+          key={idx}
+        >
           {showBulletPoints && (
             <ResumePDFText
               style={{
@@ -100,15 +109,30 @@ export const ResumePDFBulletList = ({
             </ResumePDFText>
           )}
           {/* A breaking change was introduced causing text layout to be wider than node's width
-              https://github.com/diegomura/react-pdf/issues/2182. flexGrow & flexBasis fixes it */}
+          https://github.com/diegomura/react-pdf/issues/2182. flexGrow & flexBasis fixes it */}
           <ResumePDFText
             style={{ lineHeight: "1.3", flexGrow: 1, flexBasis: 0 }}
           >
             {item}
           </ResumePDFText>
         </View>
-      ))}
-    </>
+      )),
+    [two_columns, items, showBulletPoints],
+  );
+
+  return two_columns ? (
+    <View
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        minWidth: "50%",
+      }}
+    >
+      {content}
+    </View>
+  ) : (
+    <>{content}</>
   );
 };
 

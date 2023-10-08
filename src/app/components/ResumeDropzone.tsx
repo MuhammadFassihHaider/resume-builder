@@ -82,7 +82,7 @@ export const ResumeDropzone = ({
         workExperiences: resume.workExperiences.length > 0,
         educations: resume.educations.length > 0,
         projects: resume.projects.length > 0,
-        skills: resume.skills.descriptions.length > 0,
+        skills: resume.skills.technical.length > 0,
         custom: resume.custom.descriptions.length > 0,
       };
       for (const section of sections) {

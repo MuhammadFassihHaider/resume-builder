@@ -15,7 +15,7 @@ export const END_HOME_RESUME: Resume = {
     email: "hello@openresume.com",
     phone: "123-456-7890",
     location: "NYC, NY",
-    url: "linkedin.com/in/john-doe",
+    github: "linkedin.com/in/john-doe",
   },
   workExperiences: [
     {
@@ -79,7 +79,7 @@ export const END_HOME_RESUME: Resume = {
       { skill: "React", rating: 3 },
       { skill: "C++", rating: 2 },
     ],
-    descriptions: [
+    technical: [
       "Tech: React Hooks, GraphQL, Node.js, SQL, Postgres, NoSql, Redis, REST API, Git",
       "Soft: Teamwork, Creative Problem Solving, Communication, Learning Mindset, Agile",
     ],
@@ -101,7 +101,7 @@ export const START_HOME_RESUME: Resume = {
       skill: "",
       rating: item.rating,
     })),
-    descriptions: [],
+    technical: [],
   },
   custom: {
     descriptions: [],
