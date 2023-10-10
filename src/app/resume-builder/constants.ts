@@ -52,11 +52,11 @@ export const MyResume: Resume = {
             jobTitle: "Full Stack Blockchain Developer",
             date: "July 2022 - Present",
             descriptions: [
-                "Working on open-source & decentralized XP.NETWORK NFT Bridge v2 using Substrate and Rust",
+                "Working on ~~open-source & ~~decentralized XP.NETWORK NFT Bridge v2 using ~~Substrate and ~~Rust",
 
                 "Implemented & maintained services & features for XP.NETWORK NFT Bridge v1",
 
-                "Implemented MixPanel & new features, created the desktop view & fixed bugs on the Pontem Wallet Extension. Good performance resulted in Pontem extending the contract by 4 months with XP.NETWORK",
+                "Implemented MixPanel & new features, created the desktop view & fixed bugs on the ~~Pontem ~~Wallet ~~Extension. Good performance resulted in Pontem ~~extending ~~the ~~contract by 4 months with XP.NETWORK",
 
                 "Audited smart contracts for Ethereum, Algorand, Solana & Aptos resulting in client retention",
 
@@ -110,4 +110,4 @@ export const MyResume: Resume = {
         descriptions: [],
     },
 };
- 
+

@@ -36,7 +36,6 @@ export const ResumePDFSkills = ({
         <ResumePDFBulletList
           items={soft}
           showBulletPoints={showBulletPoints}
-          two_columns
         />
       </View>
     </ResumePDFSection>
