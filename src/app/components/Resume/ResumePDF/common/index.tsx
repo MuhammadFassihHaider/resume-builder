@@ -4,7 +4,7 @@ import { styles, spacing } from "components/Resume/ResumePDF/styles";
 import { DEBUG_RESUME_PDF_FLAG } from "lib/constants";
 import { DEFAULT_FONT_COLOR } from "lib/redux/settingsSlice";
 import { useMemo } from "react";
-import { renderText } from "resume-builder/renderText";
+import { renderBoldText } from "resume-builder/renderText";
 
 export const ResumePDFSection = ({
   themeColor,
@@ -114,7 +114,7 @@ export const ResumePDFBulletList = ({
           <ResumePDFText
             style={{ lineHeight: "1.3", flexGrow: 1, flexBasis: 0 }}
           >
-            {renderText(item)}
+            {renderBoldText(item)}
           </ResumePDFText>
         </View>
       )): [],

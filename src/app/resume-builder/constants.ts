@@ -56,13 +56,13 @@ export const MyResume: Resume = {
 
                 "Implemented & maintained services & features for XP.NETWORK NFT Bridge v1",
 
-                "Implemented MixPanel & new features, created the desktop view & fixed bugs on the ~~Pontem ~~Wallet ~~Extension. Good performance resulted in Pontem ~~extending ~~the ~~contract by 4 months with XP.NETWORK",
+                "Implemented MixPanel & new features, created the desktop view & fixed bugs on the -*Pontem Wallet Extension*-. -*Good performance*- led to -*contract extension*- by 4 months with Pontem",
 
                 "Audited smart contracts for Ethereum, Algorand, Solana & Aptos resulting in client retention",
 
-                "Converted front-end of the VLaunch website from JavaScript to Typescript in 3 days (2000+ files) without breaking the website",
+                "Converted front-end of the VLaunch website from JavaScript to Typescript in -*3 days*- (2000+ files) -*without breaking the website*-",
 
-                "Completed the boot camp in the shortest amount of time (3 days). Subsequently, tasked with taking boot camps from all new hires & reviewing their code",
+                "Completed the boot camp in the -*shortest amount of time (3 days)*-. Subsequently, tasked with taking boot camps from all new hires & reviewing their code",
             ],
         },
         {
@@ -70,13 +70,13 @@ export const MyResume: Resume = {
             jobTitle: "Full Stack Developer/Technical Project Manager",
             date: "December 2021 - June 2022",
             descriptions: [
-                "Achieved the distinction of being the first person to pass the JavaScript Developer test among the hires in Pakistan",
+                "Achieved the distinction of being the -*first person to pass*- the JavaScript Developer test among the hires in Pakistan",
 
-                "Appointed as the Technical Project Manager for the Ocpus project, which was running behind schedule, immediately after the probation period ended, and just 15 days before the MVP deadline. Collaborated with the team to streamline the project, effectively bringing it back on schedule and successfully delivering the initial MVP",
+                "Appointed as the -*Technical Project Manager*- for the Ocpus project, which was running behind schedule, immediately after the probation period ended, and just 15 days before the MVP deadline. Collaborated with the team to streamline the project, effectively bringing it back on schedule and -*successfully delivering the initial MVP*-",
 
-                "Given a 100% raise immediately after the probation",
+                "Given a -*100% raise*- immediately after the probation for -*outstanding performance*-",
 
-                "Informed by the HR that I had been regarded as a benchmark for hiring new developers by the HR team & that she was proud of hiring me",
+                "Informed by the HR that I was -*regarded as a benchmark*- for hiring new developers by the HR team & that she was proud of hiring me",
             ],
         },
         {
