@@ -45,7 +45,10 @@ export const ResumePDFProfile = ({
       >
         {name}
       </ResumePDFText>
-      {summary && <ResumePDFText>{summary}</ResumePDFText>}
+      {summary && <ResumePDFText    
+        bold
+        themeColor={themeColor}
+        style={{ fontSize: "14pt" }}>{summary}</ResumePDFText>}
       <View
         style={{
           ...styles.flexRowBetween,
@@ -57,7 +60,6 @@ export const ResumePDFProfile = ({
           if (!value) return null;
           let iconType = key as IconType;
           if (key === "linkedin" || key === "github" || key === "projects") {
-            console.log("CAME HERE ONCE", value);
 
             if (value.includes("github")) {
               iconType = "url_github";
@@ -107,7 +109,7 @@ export const ResumePDFProfile = ({
             >
               <ResumePDFIcon type={iconType} isPDF={isPDF} />
               <Wrapper>
-                <ResumePDFText>{parseLinkValues(value)}</ResumePDFText>
+                <ResumePDFText>{value}</ResumePDFText>
               </Wrapper>
             </View>
           );

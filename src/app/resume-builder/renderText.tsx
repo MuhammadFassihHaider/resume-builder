@@ -4,6 +4,7 @@ const START_BOLD = '-*'
 const END_BOLD = '*-'
 
 export const renderBoldText = (text: string) => {
+    return text
     let multipleWordsToFormat: string[] = [];
     let formattedText: JSX.Element[] = [];
 

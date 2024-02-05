@@ -28,7 +28,7 @@ export const ResumePDFSkills = ({
         <ResumePDFBulletList
           items={technical}
           showBulletPoints={showBulletPoints}
-          two_columns
+          two_columns={false}
         />
       </View>
       <View>

@@ -68,12 +68,12 @@ export const ResumePDF = ({
       />
     ),
     projects: () => (
-     <></>
-      // <ResumePDFProject
-      //   heading={formToHeading["projects"]}
-      //   projects={projects}
-      //   themeColor={themeColor}
-      // />
+    //  <></>
+      <ResumePDFProject
+        heading={formToHeading["projects"]}
+        projects={projects}
+        themeColor={themeColor}
+      />
     ),
     skills: () => (
       <ResumePDFSkills
@@ -106,7 +106,7 @@ export const ResumePDF = ({
             fontSize: fontSize + "pt",
           }}
         >
-          {Boolean(settings.themeColor) && (
+          {/* {Boolean(settings.themeColor) && (
             <View
               style={{
                 width: spacing["full"],
@@ -114,7 +114,7 @@ export const ResumePDF = ({
                 backgroundColor: themeColor,
               }}
             />
-          )}
+          )} */}
           <View
             style={{
               ...styles.flexCol,

@@ -3,6 +3,7 @@ import {
   ResumePDFSection,
   ResumePDFBulletList,
   ResumePDFText,
+  ResumePDFLink,
 } from "components/Resume/ResumePDF/common";
 import { styles, spacing } from "components/Resume/ResumePDF/styles";
 import type { ResumeProject } from "lib/redux/types";
@@ -30,7 +31,11 @@ export const ResumePDFProject = ({
             <ResumePDFText>{date}</ResumePDFText>
           </View>
           <View style={{ ...styles.flexCol, marginTop: spacing["0.5"] }}>
-            <ResumePDFBulletList items={descriptions} />
+            <ResumePDFLink src={descriptions[0]} isPDF={false}>
+              <ResumePDFText style={{textDecoration: "underline"}}>{descriptions[0]} 
+            </ResumePDFText>
+            </ResumePDFLink>
+            {/* <ResumePDFBulletList items={descriptions} /> */}
           </View>
         </View>
       ))}
